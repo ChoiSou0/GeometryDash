@@ -8,11 +8,13 @@ public class PlayerUFO_Ctrl : MonoBehaviour
     public int Turn_Power = 1;
     public bool isTurn; 
     Rigidbody2D rb;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GameObject.Find("Player_UFO").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,22 +30,15 @@ public class PlayerUFO_Ctrl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             rb.AddForce(Vector2.up * Jump_Power, ForceMode2D.Impulse);
-            isTurn = true;
+            animator.SetBool("isTong", true);
         }
     }
 
     private void Turn()
     {
         
-
-        if (isTurn)
-        {
-            transform.Rotate(0, 0, transform.rotation.eulerAngles.z - Turn_Power);
-        }
-        else
-        {
-            //while (transform.rotation.z)
-        }
+        
+        
 
     }
 
