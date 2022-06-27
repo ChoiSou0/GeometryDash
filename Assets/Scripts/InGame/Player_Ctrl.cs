@@ -5,6 +5,11 @@ using DG.Tweening;
 
 public class Player_Ctrl : MonoBehaviour
 {
+    public enum PlayerCondition
+    {
+
+    }
+
     Rigidbody2D rb;
     public int JumpPower;
     public int Jump_Cnt = 1;
