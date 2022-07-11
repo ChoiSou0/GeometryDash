@@ -7,7 +7,7 @@ public class Player_Ctrl : MonoBehaviour
 {
     public enum PlayerCondition
     {
-
+        Box, Ship, Squeak, UFO, Wave, Jumper, Spider
     }
 
     Rigidbody2D rb;
@@ -22,17 +22,7 @@ public class Player_Ctrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Go();
         Jump();
-    }
-
-    void Go()
-    {
-        Vector2 Pos = transform.position;
-
-        Pos.x += 3 * Time.deltaTime;
-
-        transform.position = Pos;
     }
 
     void Jump()
